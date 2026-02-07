@@ -25,7 +25,8 @@ export default function LoginPage() {
                 // Matches page.locator('text=/wrong email or password|hatalı|invalid/i')
                 setError(data.error || 'Login failed');
             } else {
-                alert('Giriş Başarılı!');
+                // alert('Giriş Başarılı!');
+                window.location.href = '/dashboard';
             }
         } catch (err) {
             console.error(err);
