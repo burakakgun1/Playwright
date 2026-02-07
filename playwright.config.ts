@@ -19,7 +19,7 @@ export default defineConfig({
         /* Screenshot on failure */
         screenshot: 'only-on-failure',
         /* Base URL to use in actions like `await page.goto('/')`. */
-        baseURL: 'http://localhost:3001',
+        baseURL: process.env.API_URL || 'http://localhost:3001',
     },
 
     /* Run your local dev server before starting the tests */
