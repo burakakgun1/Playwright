@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main style={{ padding: '2rem' }}>
+    <main style={{ padding: '3rem' }}>
       <header>
         <h1>Emlak Otomasyon</h1>
         <nav>
