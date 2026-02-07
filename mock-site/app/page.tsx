@@ -11,7 +11,7 @@ export default function Home() {
         </nav>
       </header>
       <section>
-        <h2>Hayalinizdeki Evi Keşfedin</h2>
+        <h2>Hayalinizdeki Evi Keşfedin.</h2>
         <p>En iyi kiralık ve satılık gayrimenkuller.</p>
       </section>
     </main>
