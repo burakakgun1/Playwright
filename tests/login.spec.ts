@@ -29,22 +29,17 @@ test.describe('Emlak Otomasyon Login Testleri', () => {
             });
         }
 
-        // Dialog listener setup BEFORE action
-        const dialogPromise = page.waitForEvent('dialog');
+        // Dialog listener removed as we now redirect
 
         await test.step('Adım 1: Kullanıcı login sayfasına gider ve geçerli bilgilerini girer', async () => {
             await homePage.clickLogin();
             await loginPage.verifyLoaded();
-            // Works for both Mock and Real API (Mock adjusted to accept this, Real API adjusted to accept this)
             await loginPage.login('test@example.com', 'password123');
         });
 
-        await test.step('Adım 2: Sistemin başarılı girişi onayladığı ve hata göstermediği doğrulanır', async () => {
-            const dialog = await dialogPromise;
-            expect(dialog.message()).toContain('Giriş Başarılı');
-            await dialog.accept();
-
-            await expect(loginPage.errorMessage).toBeHidden();
+        await test.step('Adım 2: Sistemin başarılı girişi onayladığı ve dashboarda yönlendirdiği doğrulanır', async () => {
+            // Verify redirection to dashboard
+            await expect(page).toHaveURL(/.*dashboard/);
         });
     });
 
